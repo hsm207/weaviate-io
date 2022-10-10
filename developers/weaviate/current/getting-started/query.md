@@ -65,7 +65,7 @@ In the basics getting started guide, you've learned [how Weaviate uses a class-p
 
 Our demo dataset has two classes: `Article` and `Paragraph`. The `Article` class has the properties: `title` of the data type `string`, `hasParagraphs` of the data type `Paragraph`, and `linksToArticles` of the data type `Article`. The `Paragraph` class has the properties: `title` of the data type `string`, `content` of the data type `text`, `order` of the data type `int`, and `inArticle` of the data type `Article`. You can also inspect the schem of the demo dataset in JSON format [here](http://semantic-search-wikipedia-with-weaviate.api.vectors.network:8080/v1/schema).
 
-If we now want to `Get{}` all (well, "all", in this case, "all" means limited to the default limit, more about this later) `Paragraph`s without cross-references we can run the following query:
+If we now want to `Get{}` all (in this case, "all" means limited to the default limit, more about this later) `Paragraphs` without cross-references we can run the following query:
 
 ```graphql
 {
@@ -79,7 +79,7 @@ If we now want to `Get{}` all (well, "all", in this case, "all" means limited to
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3bwNLcX)
+[Try out ⬆️](https://link.semi.technology/3bwNLcX){:target="_blank"}
 
 Or we can set a cross reference like this:
 
@@ -100,7 +100,7 @@ Or we can set a cross reference like this:
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3BFeJtD)
+[Try out ⬆️](https://link.semi.technology/3BFeJtD){:target="_blank"}
 
 Let's break down what's happening in this section:
 
@@ -162,7 +162,7 @@ An example with basic `_additional{}` properties:
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3vEV5dD)
+[Try out ⬆️](https://link.semi.technology/3vEV5dD){:target="_blank"}
 
 ## Get{} with filters
 
@@ -183,7 +183,7 @@ Let's start with the simplest filter we have, the `limit` filter to, as you migh
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3QaGgra)
+[Try out ⬆️](https://link.semi.technology/3QaGgra){:target="_blank"}
 
 Weaviate also allows you to paginate over the results:
 
@@ -201,7 +201,7 @@ Weaviate also allows you to paginate over the results:
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3Jr4f2W)
+[Try out ⬆️](https://link.semi.technology/3Jr4f2W){:target="_blank"}
 
 You can also use the filters to query for specific vectors! Simply like this:
 
@@ -632,7 +632,7 @@ You can also do the​ equivalent but based on the UUID of any object in the sam
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3BIQkU2)
+[Try out ⬆️](https://link.semi.technology/3BIQkU2){:target="_blank"}
 
 ​Traditional inverted index filtering is also possible. In Weaviate we call this the `where` filter.
 
@@ -664,7 +664,7 @@ The `where` filter takes three operands of its own:
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3braebp)
+[Try out ⬆️](https://link.semi.technology/3braebp){:target="_blank"}
 
 Or for `Paragraph`s where the order is higher than `5`.
 
@@ -686,7 +686,7 @@ Or for `Paragraph`s where the order is higher than `5`.
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3OWJ9KU)
+[Try out ⬆️](https://link.semi.technology/3OWJ9KU){:target="_blank"}
 
 Or by combining them setting muliple opperands:
 
@@ -715,7 +715,7 @@ Or by combining them setting muliple opperands:
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3bqm0D9)
+[Try out ⬆️](https://link.semi.technology/3bqm0D9){:target="_blank"}
 
 The path is an array, so this means you can also set the filter specifically for a cross reference:
 
@@ -741,7 +741,7 @@ The path is an array, so this means you can also set the filter specifically for
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3Qi0PBT)
+[Try out ⬆️](https://link.semi.technology/3Qi0PBT){:target="_blank"}
 
 And yes, you can combine vector search with where filters.
 
@@ -773,7 +773,7 @@ And yes, you can combine vector search with where filters.
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3QgJPfo)
+[Try out ⬆️](https://link.semi.technology/3QgJPfo){:target="_blank"}
 
 <div class="alert alert-secondary alert-getting-started" markdown="1">
 💡 We call Weaviate "vector first". This means that when combining vector search with a where filter, the where-filter will create an allowed-list that skips entries that are not allowed in the ANN index.
@@ -808,7 +808,7 @@ First, there is the additional `nearText` filter exposed by the `text2vec-transf
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3bwXO1F)
+[Try out ⬆️](https://link.semi.technology/3bwXO1F){:target="_blank"}
 
 Second, we can use the `ask` arguments exposed by the Q&A module, note how there are also additional `_additional` properties.
 
@@ -837,7 +837,7 @@ Second, we can use the `ask` arguments exposed by the Q&A module, note how there
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3buN2t0)
+[Try out ⬆️](https://link.semi.technology/3buN2t0){:target="_blank"}
 
 And last but not least, we can combine all of them together!
 
@@ -871,7 +871,7 @@ And last but not least, we can combine all of them together!
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3PWDqX1)
+[Try out ⬆️](https://link.semi.technology/3PWDqX1){:target="_blank"}
 
 Talking about filters, wanna see something cool? Weaviate has many more functions out-of-the-box like feature projection to visualize your results, like this example on a 3D surface.
 
@@ -902,7 +902,7 @@ Talking about filters, wanna see something cool? Weaviate has many more function
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3vDh8Bk)
+[Try out ⬆️](https://link.semi.technology/3vDh8Bk){:target="_blank"}
 
 Last but not least, all the standard filters are documented in the [filters section](../graphql-references/filters.html) of the GraphQL references documentation or in the documentation of the individual modules.
 
@@ -932,7 +932,7 @@ Let's start with counting the number of data objects in the `Paragraph` class:
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3oT8cUH)
+[Try out ⬆️](https://link.semi.technology/3oT8cUH){:target="_blank"}
 
 You can also mix in filters like this:
 
@@ -958,7 +958,7 @@ You can also mix in filters like this:
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3JtmnJo)
+[Try out ⬆️](https://link.semi.technology/3JtmnJo){:target="_blank"}
 
 The `order` property in the `Paragraph` class is a nice example of how you can use the `Aggregate{}` function for integers.
 
@@ -981,7 +981,7 @@ The `order` property in the `Paragraph` class is a nice example of how you can u
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3QnXRfj)
+[Try out ⬆️](https://link.semi.technology/3QnXRfj){:target="_blank"}
 
 You can find detailed documentation on the `Aggregate{}` function [here](../graphql-references/aggregate.html).
 
@@ -1012,7 +1012,7 @@ Important to know: in almost any situation, need to do two queries when using th
 }
 ```
 
-[Try out ⬆️](https://link.semi.technology/3vFyYUj)
+[Try out ⬆️](https://link.semi.technology/3vFyYUj){:target="_blank"}
 
 The `Explore{}` function works very straightforwardly and only returns four properties.
 
